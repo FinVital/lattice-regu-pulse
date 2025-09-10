@@ -30,14 +30,14 @@ export const CTA = () => {
           {/* Main Headline */}
           <div className="space-y-6">
             <h2 className="text-4xl md:text-6xl font-bold font-heading text-white leading-tight">
-              Ready to Transform Your{' '}
+              Ready to{' '}
               <span className="bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent">
-                Compliance Operations?
+                Simplify Compliance?
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-              Join 500+ financial institutions already using ReguLattice to streamline their regulatory workflows 
-              and reduce compliance costs by up to 90%.
+              Join the future with ReguLattice. Streamline your regulatory workflows 
+              and reduce compliance costs with AI-powered automation.
             </p>
           </div>
 
@@ -73,7 +73,7 @@ export const CTA = () => {
               onMouseLeave={() => setHoveredButton(null)}
             >
               <Zap className="w-5 h-5 mr-2 group-hover:text-yellow-500 transition-colors" />
-              Start Free Trial Now
+              Start Free Trial
               <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             
@@ -87,7 +87,7 @@ export const CTA = () => {
               onMouseLeave={() => setHoveredButton(null)}
             >
               <Shield className="w-5 h-5 mr-2" />
-              Schedule Enterprise Demo
+              Book a Demo
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
@@ -117,13 +117,24 @@ export const CTA = () => {
             </div>
           </div>
 
-          {/* Urgency Element */}
-          <div className="pt-8">
+          {/* Contact Information */}
+          <div className="pt-8 space-y-4">
             <div className="inline-flex items-center space-x-2 bg-yellow-300/20 backdrop-blur-sm rounded-full px-6 py-3 border border-yellow-300/30">
               <div className="w-2 h-2 bg-yellow-300 rounded-full animate-pulse" />
               <span className="text-white/90 text-sm font-medium">
                 Limited Time: Implementation support included free for the first 50 customers
               </span>
+            </div>
+            <div className="text-center">
+              <p className="text-white/80 text-sm">
+                Questions? Contact us at{' '}
+                <a 
+                  href="mailto:info@regulattice.com" 
+                  className="text-yellow-300 hover:text-yellow-200 font-semibold transition-colors"
+                >
+                  info@regulattice.com
+                </a>
+              </p>
             </div>
           </div>
         </div>

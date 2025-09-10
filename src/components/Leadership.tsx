@@ -1,7 +1,6 @@
 import React from 'react';
 import { Linkedin, Mail, Star, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import moazzamImage from '@/assets/moazzam-waheed.jpg';
 
 export const Leadership = () => {
   return (
@@ -26,11 +25,11 @@ export const Leadership = () => {
               {/* Profile Image */}
               <div className="relative">
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-elegant">
-                  <img
-                    src={moazzamImage}
-                    alt="Moazzam Waheed - CEO & Founder of ReguLattice"
-                    className="w-full h-full object-cover"
-                  />
+                   <img
+                     src="/lovable-uploads/14a43408-c51f-4d3b-896c-9c0c12840823.png"
+                     alt="Moazzam Waheed - CEO & Founder of ReguLattice"
+                     className="w-full h-full object-cover"
+                   />
                 </div>
                 
                 {/* Floating Awards */}
@@ -83,13 +82,17 @@ export const Leadership = () => {
 
                 {/* Contact Actions */}
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Button variant="compliance" className="group">
-                    <Linkedin className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                    Connect on LinkedIn
+                  <Button variant="compliance" className="group" asChild>
+                    <a href="https://www.linkedin.com/in/moazzam-waheed-509496366/" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                      Connect on LinkedIn
+                    </a>
                   </Button>
-                  <Button variant="compliance-outline" className="group">
-                    <Mail className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                    Send Message
+                  <Button variant="compliance-outline" className="group" asChild>
+                    <a href="mailto:info@regulattice.com">
+                      <Mail className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                      Send Message
+                    </a>
                   </Button>
                 </div>
               </div>

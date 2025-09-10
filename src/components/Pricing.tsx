@@ -7,7 +7,7 @@ const plans = [
   {
     name: 'Starter',
     description: 'Perfect for small institutions getting started with compliance automation',
-    price: '$299',
+    price: '$500',
     period: 'per month',
     theme: 'onboarding' as const,
     features: [
@@ -21,9 +21,9 @@ const plans = [
     cta: 'Start Free Trial',
   },
   {
-    name: 'Professional',
+    name: 'Pro',
     description: 'Advanced features for growing financial institutions',
-    price: '$899',
+    price: '$1,200',
     period: 'per month',
     theme: 'compliance' as const,
     popular: true,
@@ -43,7 +43,7 @@ const plans = [
     name: 'Enterprise',
     description: 'Comprehensive solution for large-scale operations',
     price: 'Custom',
-    period: 'contact us',
+    period: 'pricing',
     theme: 'regtech' as const,
     features: [
       'Unlimited KYC verifications',
@@ -164,34 +164,42 @@ export const Pricing = () => {
           ))}
         </div>
 
-        {/* Bottom Info */}
+        {/* Add-ons & Early Adopter Program */}
         <div className="mt-16 text-center space-y-6">
           <div className="bg-white/80 rounded-2xl p-8 shadow-elegant">
-            <h3 className="text-2xl font-bold font-heading text-onboarding-accent mb-4">
-              All Plans Include
+            <h3 className="text-2xl font-bold font-heading text-onboarding-accent mb-6">
+              Add-ons & Special Offers
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm text-gray-600">
-              <div className="space-y-2">
-                <Check className="w-5 h-5 text-onboarding-primary mx-auto" />
-                <div>SOC 2 Security</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <h4 className="text-lg font-semibold text-gray-800">Specialized Compliance Modules</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-onboarding-primary" />
+                    <span>HIPAA Compliance Module</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-onboarding-primary" />
+                    <span>PCI DSS Compliance Module</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-onboarding-primary" />
+                    <span>Custom Regulatory Frameworks</span>
+                  </li>
+                </ul>
               </div>
-              <div className="space-y-2">
-                <Check className="w-5 h-5 text-onboarding-primary mx-auto" />
-                <div>99.99% Uptime SLA</div>
-              </div>
-              <div className="space-y-2">
-                <Check className="w-5 h-5 text-onboarding-primary mx-auto" />
-                <div>GDPR Compliance</div>
-              </div>
-              <div className="space-y-2">
-                <Check className="w-5 h-5 text-onboarding-primary mx-auto" />
-                <div>Regular Updates</div>
+              <div className="bg-gradient-to-br from-compliance-primary/10 to-regtech-primary/10 rounded-xl p-6">
+                <h4 className="text-lg font-semibold text-gray-800 mb-2">Early Adopter Program</h4>
+                <div className="text-3xl font-bold text-compliance-primary mb-2">15% OFF</div>
+                <p className="text-gray-600 text-sm">
+                  Special discount for pilot clients. Limited time offer for early adopters.
+                </p>
               </div>
             </div>
           </div>
 
           <p className="text-gray-600">
-            Need a custom solution? <a href="#" className="text-onboarding-primary hover:text-onboarding-accent font-semibold">Contact our sales team</a> for enterprise pricing.
+            Need a custom solution? <a href="mailto:info@regulattice.com" className="text-onboarding-primary hover:text-onboarding-accent font-semibold">Contact our sales team</a> for enterprise pricing.
           </p>
         </div>
       </div>
