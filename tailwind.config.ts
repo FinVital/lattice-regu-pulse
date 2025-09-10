@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+        heading: ['Poppins', 'ui-sans-serif', 'system-ui'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +51,30 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Compliance Theme Colors
+        compliance: {
+          primary: "hsl(var(--compliance-primary))",
+          secondary: "hsl(var(--compliance-secondary))",
+          accent: "hsl(var(--compliance-accent))",
+          foreground: "hsl(var(--compliance-foreground))",
+        },
+        regtech: {
+          primary: "hsl(var(--regtech-primary))",
+          secondary: "hsl(var(--regtech-secondary))",
+          accent: "hsl(var(--regtech-accent))",
+          foreground: "hsl(var(--regtech-foreground))",
+        },
+        onboarding: {
+          primary: "hsl(var(--onboarding-primary))",
+          secondary: "hsl(var(--onboarding-secondary))",
+          accent: "hsl(var(--onboarding-accent))",
+          foreground: "hsl(var(--onboarding-foreground))",
+        },
+        alert: {
+          amber: "hsl(var(--alert-amber))",
+          red: "hsl(var(--alert-red))",
+          green: "hsl(var(--alert-green))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -57,6 +85,24 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        'gradient-compliance': 'var(--gradient-compliance)',
+        'gradient-regtech': 'var(--gradient-regtech)', 
+        'gradient-onboarding': 'var(--gradient-onboarding)',
+        'gradient-hero': 'var(--gradient-hero)',
+      },
+      boxShadow: {
+        'compliance': 'var(--shadow-compliance)',
+        'regtech': 'var(--shadow-regtech)',
+        'onboarding': 'var(--shadow-onboarding)',
+        'elegant': 'var(--shadow-elegant)',
+        'glow': 'var(--shadow-glow)',
+      },
+      transitionTimingFunction: {
+        'smooth': 'var(--transition-smooth)',
+        'bounce': 'var(--transition-bounce)',
+        'fast': 'var(--transition-fast)',
       },
       borderRadius: {
         lg: "var(--radius)",

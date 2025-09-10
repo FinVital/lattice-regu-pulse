@@ -1,0 +1,200 @@
+import React from 'react';
+import { Check, Star, Zap } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+
+const plans = [
+  {
+    name: 'Starter',
+    description: 'Perfect for small institutions getting started with compliance automation',
+    price: '$299',
+    period: 'per month',
+    theme: 'onboarding' as const,
+    features: [
+      'Up to 1,000 KYC verifications/month',
+      'Basic AML monitoring',
+      'Standard reporting dashboard',
+      'Email support',
+      'API access',
+      'Basic compliance templates',
+    ],
+    cta: 'Start Free Trial',
+  },
+  {
+    name: 'Professional',
+    description: 'Advanced features for growing financial institutions',
+    price: '$899',
+    period: 'per month',
+    theme: 'compliance' as const,
+    popular: true,
+    features: [
+      'Up to 10,000 KYC verifications/month',
+      'Advanced AML & fraud detection',
+      'Custom reporting & analytics',
+      'Priority support (24/7)',
+      'Full API suite',
+      'Advanced compliance workflows',
+      'Risk scoring algorithms',
+      'Multi-jurisdiction support',
+    ],
+    cta: 'Get Started',
+  },
+  {
+    name: 'Enterprise',
+    description: 'Comprehensive solution for large-scale operations',
+    price: 'Custom',
+    period: 'contact us',
+    theme: 'regtech' as const,
+    features: [
+      'Unlimited KYC verifications',
+      'Enterprise AML suite',
+      'White-label solutions',
+      'Dedicated account manager',
+      'Custom integrations',
+      'Advanced security features',
+      'Regulatory consulting',
+      'SLA guarantees',
+    ],
+    cta: 'Contact Sales',
+  },
+];
+
+export const Pricing = () => {
+  return (
+    <section className="py-20 section-onboarding relative overflow-hidden">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold font-heading text-onboarding-accent mb-6">
+            Pricing Plans
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Choose the perfect plan for your institution. Scale as you grow with transparent, predictable pricing.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          {plans.map((plan, index) => (
+            <Card
+              key={index}
+              className={`
+                relative overflow-hidden hover-lift transition-all duration-500 border-0
+                ${plan.theme === 'compliance' ? 'bg-white/90 shadow-compliance' :
+                  plan.theme === 'regtech' ? 'bg-white/90 shadow-regtech' :
+                  'bg-white/90 shadow-onboarding'}
+                ${plan.popular ? 'scale-105 pulse-glow' : ''}
+              `}
+            >
+              {/* Popular Badge */}
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                  <div className="bg-gradient-to-r from-compliance-primary to-compliance-secondary text-compliance-foreground px-6 py-2 rounded-full text-sm font-bold flex items-center space-x-2 shadow-glow">
+                    <Star className="w-4 h-4" />
+                    <span>Most Popular</span>
+                  </div>
+                </div>
+              )}
+
+              <CardHeader className="text-center pb-8 pt-8">
+                <CardTitle className="text-2xl font-heading text-gray-800 mb-2">
+                  {plan.name}
+                </CardTitle>
+                <CardDescription className="text-gray-600 mb-6">
+                  {plan.description}
+                </CardDescription>
+                
+                <div className="space-y-2">
+                  <div className="flex items-baseline justify-center space-x-2">
+                    <span className={`
+                      text-4xl font-bold
+                      ${plan.theme === 'compliance' ? 'text-compliance-primary' :
+                        plan.theme === 'regtech' ? 'text-regtech-primary' :
+                        'text-onboarding-primary'}
+                    `}>
+                      {plan.price}
+                    </span>
+                    {plan.price !== 'Custom' && (
+                      <span className="text-gray-500">/{plan.period.split(' ')[1]}</span>
+                    )}
+                  </div>
+                  <div className="text-sm text-gray-500">{plan.period}</div>
+                </div>
+              </CardHeader>
+
+              <CardContent className="space-y-6">
+                {/* Features List */}
+                <ul className="space-y-4">
+                  {plan.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start space-x-3">
+                      <Check className={`
+                        w-5 h-5 flex-shrink-0 mt-0.5
+                        ${plan.theme === 'compliance' ? 'text-compliance-primary' :
+                          plan.theme === 'regtech' ? 'text-regtech-primary' :
+                          'text-onboarding-primary'}
+                      `} />
+                      <span className="text-gray-600">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA Button */}
+                <div className="pt-6">
+                  <Button
+                    variant={
+                      plan.theme === 'compliance' ? 'compliance' :
+                      plan.theme === 'regtech' ? 'regtech' :
+                      'onboarding'
+                    }
+                    size="lg"
+                    className="w-full"
+                  >
+                    {plan.cta}
+                    {plan.popular && <Zap className="w-4 h-4 ml-2" />}
+                  </Button>
+                </div>
+              </CardContent>
+
+              {/* Background Gradient Effect */}
+              <div className={`
+                absolute inset-0 opacity-5 pointer-events-none
+                ${plan.theme === 'compliance' ? 'bg-gradient-to-br from-compliance-primary to-compliance-secondary' :
+                  plan.theme === 'regtech' ? 'bg-gradient-to-br from-regtech-primary to-regtech-secondary' :
+                  'bg-gradient-to-br from-onboarding-primary to-onboarding-secondary'}
+              `} />
+            </Card>
+          ))}
+        </div>
+
+        {/* Bottom Info */}
+        <div className="mt-16 text-center space-y-6">
+          <div className="bg-white/80 rounded-2xl p-8 shadow-elegant">
+            <h3 className="text-2xl font-bold font-heading text-onboarding-accent mb-4">
+              All Plans Include
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm text-gray-600">
+              <div className="space-y-2">
+                <Check className="w-5 h-5 text-onboarding-primary mx-auto" />
+                <div>SOC 2 Security</div>
+              </div>
+              <div className="space-y-2">
+                <Check className="w-5 h-5 text-onboarding-primary mx-auto" />
+                <div>99.99% Uptime SLA</div>
+              </div>
+              <div className="space-y-2">
+                <Check className="w-5 h-5 text-onboarding-primary mx-auto" />
+                <div>GDPR Compliance</div>
+              </div>
+              <div className="space-y-2">
+                <Check className="w-5 h-5 text-onboarding-primary mx-auto" />
+                <div>Regular Updates</div>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-gray-600">
+            Need a custom solution? <a href="#" className="text-onboarding-primary hover:text-onboarding-accent font-semibold">Contact our sales team</a> for enterprise pricing.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};

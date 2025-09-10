@@ -2,41 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ReguLattice Compliance Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Base System Colors */
+    --background: 210 100% 98%;
+    --foreground: 220 39% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 220 39% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 39% 11%;
+    --border: 210 40% 91%;
+    --input: 210 40% 91%;
+    --ring: 221 83% 53%;
+    --radius: 0.75rem;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Compliance Blue Theme */
+    --compliance-bg-start: 210 100% 98%;
+    --compliance-bg-end: 210 100% 94%;
+    --compliance-primary: 221 83% 53%;
+    --compliance-secondary: 159 84% 39%;
+    --compliance-accent: 221 68% 25%;
+    --compliance-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* RegTech Green Theme */
+    --regtech-bg-start: 150 100% 98%;
+    --regtech-bg-end: 150 100% 93%;
+    --regtech-primary: 145 63% 49%;
+    --regtech-secondary: 215 28% 27%;
+    --regtech-accent: 145 75% 35%;
+    --regtech-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Onboarding Neutral Theme */
+    --onboarding-bg-start: 0 0% 100%;
+    --onboarding-bg-end: 252 100% 98%;
+    --onboarding-primary: 244 58% 67%;
+    --onboarding-secondary: 185 84% 29%;
+    --onboarding-accent: 244 100% 50%;
+    --onboarding-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Alert Colors */
+    --alert-amber: 38 92% 50%;
+    --alert-red: 0 84% 60%;
+    --alert-green: 142 76% 36%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Gradients */
+    --gradient-compliance: linear-gradient(135deg, hsl(var(--compliance-bg-start)), hsl(var(--compliance-bg-end)));
+    --gradient-regtech: linear-gradient(135deg, hsl(var(--regtech-bg-start)), hsl(var(--regtech-bg-end)));
+    --gradient-onboarding: linear-gradient(135deg, hsl(var(--onboarding-bg-start)), hsl(var(--onboarding-bg-end)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--compliance-primary) / 0.1), hsl(var(--regtech-primary) / 0.1));
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Shadows & Effects */
+    --shadow-compliance: 0 10px 40px -10px hsl(var(--compliance-primary) / 0.2);
+    --shadow-regtech: 0 10px 40px -10px hsl(var(--regtech-primary) / 0.2);
+    --shadow-onboarding: 0 10px 40px -10px hsl(var(--onboarding-primary) / 0.2);
+    --shadow-elegant: 0 25px 50px -12px hsl(220 39% 11% / 0.15);
+    --shadow-glow: 0 0 30px hsl(var(--compliance-primary) / 0.3);
 
-    --radius: 0.5rem;
+    /* Animation Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-fast: all 0.2s ease-out;
+
+    /* Standard shadcn mappings */
+    --primary: var(--compliance-primary);
+    --primary-foreground: var(--compliance-foreground);
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 220 39% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: var(--compliance-accent);
+    --accent-foreground: var(--compliance-foreground);
+    --destructive: var(--alert-red);
+    --destructive-foreground: 0 0% 100%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +140,82 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+/* Compliance Animation Classes */
+@layer components {
+  .lattice-node {
+    @apply absolute rounded-full opacity-60;
+    background: radial-gradient(circle, hsl(var(--compliance-primary) / 0.4), transparent);
+    animation: lattice-pulse 3s ease-in-out infinite;
+  }
+
+  .floating-icon {
+    @apply absolute opacity-30;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .fingerprint-wave {
+    @apply absolute rounded-full border-2;
+    border-color: hsl(var(--compliance-primary) / 0.3);
+    animation: fingerprint-expand 4s ease-out infinite;
+  }
+
+  .compliance-glow {
+    @apply transition-all duration-500;
+    box-shadow: 0 0 20px hsl(var(--compliance-primary) / 0.3);
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  .section-compliance {
+    background: var(--gradient-compliance);
+  }
+
+  .section-regtech {
+    background: var(--gradient-regtech);
+  }
+
+  .section-onboarding {
+    background: var(--gradient-onboarding);
+  }
+}
+
+/* Compliance Keyframe Animations */
+@keyframes lattice-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(5deg); }
+  66% { transform: translateY(5px) rotate(-3deg); }
+}
+
+@keyframes fingerprint-expand {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 20px hsl(var(--compliance-primary) / 0.3); }
+  100% { box-shadow: 0 0 40px hsl(var(--compliance-primary) / 0.6); }
+}
+
+@keyframes orbit {
+  0% { transform: translate(-50%, -50%) rotate(0deg) translateX(60px) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) translateX(60px) rotate(-360deg); }
 }
