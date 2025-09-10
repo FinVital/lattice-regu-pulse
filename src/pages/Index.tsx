@@ -6,6 +6,7 @@ import { Features } from '@/components/Features';
 import { USPs } from '@/components/USPs';
 import { Pricing } from '@/components/Pricing';
 import { Leadership } from '@/components/Leadership';
+import { Contact } from '@/components/Contact';
 import { CTA } from '@/components/CTA';
 
 const Index = () => {
@@ -19,10 +20,11 @@ const Index = () => {
         <Hero />
         <About />
         <Features />
-        <USPs />
-        <Pricing />
-        <Leadership />
-        <CTA />
+      <USPs />
+      <Pricing />
+      <Leadership />
+      <Contact />
+      <CTA />
       </main>
     </div>
   );

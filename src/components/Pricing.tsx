@@ -11,7 +11,7 @@ const plans = [
     period: 'per month',
     theme: 'onboarding' as const,
     features: [
-      'Up to 1,000 KYC verifications/month',
+      'Up to 5+ KYC verifications/month',
       'Basic AML monitoring',
       'Standard reporting dashboard',
       'Email support',
@@ -62,13 +62,23 @@ const plans = [
 export const Pricing = () => {
   return (
     <section className="py-20 section-onboarding relative overflow-hidden">
+      {/* Enhanced Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-onboarding-primary/5 via-compliance-primary/5 to-regtech-primary/5" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(79,70,229,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(16,185,129,0.1),transparent_50%)]" />
+      
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-heading text-onboarding-accent mb-6">
-            Pricing Plans
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-2 mb-6 border border-onboarding-primary/20">
+            <span className="w-2 h-2 bg-onboarding-primary rounded-full animate-pulse"></span>
+            <span className="text-onboarding-primary font-semibold text-sm">Transparent Pricing</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold font-heading text-onboarding-accent mb-8 bg-gradient-to-r from-onboarding-primary via-compliance-primary to-regtech-primary bg-clip-text text-transparent">
+            Choose Your Plan
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Choose the perfect plan for your institution. Scale as you grow with transparent, predictable pricing.
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Scale your compliance operations with transparent, predictable pricing. 
+            <span className="block text-onboarding-primary font-semibold mt-2">Start small, grow big – we adapt with you</span>
           </p>
         </div>
 
@@ -77,11 +87,12 @@ export const Pricing = () => {
             <Card
               key={index}
               className={`
-                relative overflow-hidden hover-lift transition-all duration-500 border-0
-                ${plan.theme === 'compliance' ? 'bg-white/90 shadow-compliance' :
-                  plan.theme === 'regtech' ? 'bg-white/90 shadow-regtech' :
-                  'bg-white/90 shadow-onboarding'}
-                ${plan.popular ? 'scale-105 pulse-glow' : ''}
+                group relative overflow-hidden hover-lift transition-all duration-700 border-0
+                ${plan.theme === 'compliance' ? 'bg-white/95 shadow-compliance hover:shadow-2xl' :
+                  plan.theme === 'regtech' ? 'bg-white/95 shadow-regtech hover:shadow-2xl' :
+                  'bg-white/95 shadow-onboarding hover:shadow-2xl'}
+                ${plan.popular ? 'scale-105 pulse-glow ring-2 ring-compliance-primary/20' : 'hover:scale-102'}
+                backdrop-blur-sm hover:bg-white transform-gpu
               `}
             >
               {/* Popular Badge */}
