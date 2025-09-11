@@ -22,8 +22,9 @@ export const About = () => {
                 About ReguLattice
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                We're revolutionizing compliance technology through intelligent automation and AI-driven insights. 
-                Our platform helps financial institutions navigate complex regulatory landscapes with confidence and efficiency.
+                At ReguLattice, we believe compliance should empower—not slow down—innovation. Founded by Moazzam Waheed, 
+                our mission is to simplify regulatory complexity through intelligent automation, AI-powered verification, 
+                and a modern compliance experience.
               </p>
             </div>
 

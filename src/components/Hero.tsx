@@ -35,8 +35,7 @@ export const Hero = () => {
               <span className="text-regtech-primary">Simplified.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Transform your regulatory workflow with intelligent automation. 
-              Streamline KYC, AML, and compliance processes with ReguLattice's cutting-edge AI platform.
+              ReguLattice helps fintechs automate regulatory compliance, KYC, and risk management with AI-driven insights and a gamified approach.
             </p>
           </div>
 
