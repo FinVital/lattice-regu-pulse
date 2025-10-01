@@ -31,12 +31,26 @@ export const Hero = () => {
           {/* Main Headline */}
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold font-heading text-compliance-primary leading-tight">
-              AI-Powered Compliance.{' '}
-              <span className="text-regtech-primary">Simplified.</span>
+              Achieve SOC 2 in{' '}
+              <span className="text-regtech-primary">Weeks, Not Months</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              ReguLattice helps fintechs automate regulatory compliance, KYC, and risk management with AI-driven insights and a gamified approach.
+              ReguLattice automates regulatory compliance, KYC, and risk management with AI-driven insights. Get certified 85% faster than traditional approaches.
             </p>
+            <div className="flex items-center justify-center gap-8 pt-4">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-compliance-primary">3-4 weeks</div>
+                <p className="text-sm text-gray-500">to SOC 2 ready</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-regtech-primary">85%</div>
+                <p className="text-sm text-gray-500">faster than manual</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-compliance-primary">$200K+</div>
+                <p className="text-sm text-gray-500">average savings</p>
+              </div>
+            </div>
           </div>
 
           {/* CTA Buttons */}
