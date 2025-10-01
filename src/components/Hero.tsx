@@ -31,8 +31,8 @@ export const Hero = () => {
           {/* Main Headline */}
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold font-heading text-compliance-primary leading-tight">
-              Achieve SOC 2 in{' '}
-              <span className="text-regtech-primary">Weeks, Not Months</span>
+              AI-Powered Compliance.{' '}
+              <span className="text-regtech-primary">Simplified.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               ReguLattice automates regulatory compliance, KYC, and risk management with AI-driven insights. Get certified 85% faster than traditional approaches.
@@ -69,7 +69,7 @@ export const Hero = () => {
             <p className="text-sm text-gray-500 uppercase tracking-wider font-medium">
               Trusted by Leading Financial Institutions
             </p>
-            <div className="flex justify-center items-center space-x-8 opacity-60">
+            <div className="flex justify-center items-center space-x-4 sm:space-x-8 opacity-60 flex-wrap gap-4">
               <div className="bg-white/80 px-6 py-3 rounded-lg shadow-sm">
                 <span className="text-compliance-primary font-semibold">SOC 2 Certified</span>
               </div>
@@ -78,6 +78,9 @@ export const Hero = () => {
               </div>
               <div className="bg-white/80 px-6 py-3 rounded-lg shadow-sm">
                 <span className="text-onboarding-primary font-semibold">PCI DSS</span>
+              </div>
+              <div className="bg-white/80 px-6 py-3 rounded-lg shadow-sm">
+                <span className="text-compliance-secondary font-semibold">SBP</span>
               </div>
             </div>
           </div>

@@ -51,15 +51,6 @@ export const Testimonials = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-compliance-primary mb-4">
-            Trusted by Leading Fintechs
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Join hundreds of companies that have accelerated their compliance journey with ReguLattice
-          </p>
-        </div>
 
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -106,7 +97,7 @@ export const Testimonials = () => {
         {/* Company Logos */}
         <div className="border-t border-gray-200 pt-12">
           <p className="text-center text-gray-500 mb-8 uppercase tracking-wider text-sm font-medium">
-            Powering Compliance For
+            Backed by NIC Hyderabad - Elite Program
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
             {logos.map((logo, index) => (

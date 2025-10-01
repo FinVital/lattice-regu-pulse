@@ -84,13 +84,13 @@ export const Contact = () => {
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      value: '+923346250250',
+      link: 'tel:+923346250250'
     },
     {
       icon: MapPin,
       label: 'Address',
-      value: '123 Compliance St, RegTech City',
+      value: '271 BMCHS Rd. 18, Karachi, Pakistan',
       link: null
     },
     {
