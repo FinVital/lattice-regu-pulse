@@ -97,7 +97,7 @@ export const Pricing = () => {
             >
               {/* Popular Badge */}
               {plan.popular && (
-                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-10">
+                <div className="absolute -top left-1/2 transform -translate-x-1/2 z-10">
                   <div className="bg-gradient-to-r from-compliance-primary to-compliance-secondary text-compliance-foreground px-6 py-2 rounded-full text-sm font-bold flex items-center space-x-2 shadow-glow whitespace-nowrap">
                     <Star className="w-4 h-4" />
                     <span>Most Popular</span>
