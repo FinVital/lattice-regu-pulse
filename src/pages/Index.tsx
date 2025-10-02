@@ -13,6 +13,7 @@ import { Contact } from '@/components/Contact';
 import { CTA } from '@/components/CTA';
 import { GrokWidget } from '@/components/GrokWidget';
 
+
 const Index = () => {
   return (
     <div className="min-h-screen relative">
